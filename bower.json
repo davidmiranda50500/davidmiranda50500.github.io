@@ -1,0 +1,26 @@
+{
+  "name": "davidmiranda50500",
+  "authors": [
+    "Matheus Graciano (pc-beta) <graciano.dev@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "none",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^4.2.0",
+    "gess": "^1.1.0",
+    "bourbon": "^4.2.7",
+    "slider-pro": "^1.2.2",
+    "ResponsiveSlides.js": "viljamis/ResponsiveSlides.js",
+    "codaslider": "jquery-codaslider#*"
+  }
+}
