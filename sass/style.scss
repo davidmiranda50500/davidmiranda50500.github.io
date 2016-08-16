@@ -1,7 +1,7 @@
 @import "../bower_components/gess/src/gess";
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "../bower_components/normalize-css/normalize.css";
-@import "../bower_components/ResponsiveSlides.js/responsiveslides.css";
+@import "../bower_components/normalize-css/normalize";
+@import "../bower_components/ResponsiveSlides.js/responsiveslides";
 @import url(https://fonts.googleapis.com/css?family=Exo:400,600,900);
 
 //misc
@@ -9,7 +9,6 @@ $purple: #652d8c;
 $blue: #009bc8;
 $pink: #e1007e;
 $yellow: #ebe55f;
-
 
 $gess_devices_map: (
     'small'  : (0, 600px),
