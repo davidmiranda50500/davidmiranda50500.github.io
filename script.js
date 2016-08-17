@@ -35,6 +35,6 @@ $(function(){
 	// 	console.log(ev);
 	// });
 
-	$next.text(">");
-	$prev.text("<");
+	$next.text("▶");
+	$prev.text("◀");
 });
