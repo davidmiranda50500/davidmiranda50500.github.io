@@ -21,6 +21,14 @@ $(function(){
         maxwidth: 960,
         nav: true
 	});
+
+	$('.js-slide-propostas').responsiveSlides({
+        auto: true,
+        speed: 1000,
+        nav: true
+	});
+
+
 	var $next = $(".rslides_nav.next");
 	var $prev = $(".rslides_nav.prev");
 	// $('.js-slideshow').on('swipe', function(ev){
