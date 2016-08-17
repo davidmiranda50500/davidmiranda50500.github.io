@@ -381,13 +381,14 @@ $menu-btt-size: 3em;
   @include transform(rotate(0deg));
   @include transition(.5s ease-in-out);
   cursor: pointer;
+  display: block;
   height: 3em;
   margin: .2em .2em auto;
   position: relative;
   width: 3em;
 }
 
-#menu-icon span {
+#menu-icon .dash {
   background: #fff;
   border-radius: 9px;
   display: block;
