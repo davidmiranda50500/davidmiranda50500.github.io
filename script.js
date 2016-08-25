@@ -3,6 +3,20 @@
 
 $(function(){
 	var $root = $('html, body');
+	var $menuicon = $("#menu-icon");
+	$('#side-menu a').click(function() {
+	    var href = $.attr(this, 'href');
+	    $root.animate({
+	        scrollTop: href=="#"? 0 : $(href).offset().top
+	    }, 500, function () {
+	        window.location.hash = href;
+	    });
+	    $menuicon.click();
+	    return false;
+	});
+	$menuicon.click(function(){
+		$(this).toggleClass('open');
+	});
 
 	$('.js-slideshow').responsiveSlides({
         auto: false,
