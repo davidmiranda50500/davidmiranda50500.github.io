@@ -20,6 +20,10 @@ html, body {
 	font-family: Exo, sans-serif;
 }
 
+body {
+	min-width: 320px;
+}
+
 @mixin parallax(){
   align-items: center;
   background: fixed top center;
@@ -305,43 +309,62 @@ $slider-height: 520px;
 	}
 }
 
-//programa
-#programa {
+//na imprensa
+#na-imprensa {
 	@include content();
 	background: $pink;
 	color: #fff;
-	font-size: 2em;
 	text-align: left;
 }
 
-.programa {
+.na-imprensa {
     box-sizing: border-box;
     display: block !important;
     padding-top: 1px;
 	padding-bottom: 2em;
-	h2, h3 {
+	h2 {
+		font-size: 3em;
 		text-align: center;
 		text-transform: uppercase;
 	}
-	h3:before {
-		content: '▪';
-	}
-	.manifesto{
-		text-align: center;
+	& > ul {
+		margin: 0;
+		@include gess(30%, 'big');
+		@include gess(45%, 'medium');
+		@include gess(90%, 'small');
+		justify-content: space-around;
+		& > li {
+			background: $yellow;
+			border-radius: 5px;
+			border: $yellow solid 2px;
+			box-sizing: border-box;
+			font-weight: 600;
+			@include transition(all 0.3s ease);
+			p {
+				text-align: center;
+			} 
+			margin-bottom: 2em;
+		}
+		& > li:hover {
+			background: rgba($yellow, 0.8);
+			cursor: pointer;
+			@include transition(all 0.3s ease);
+		}
 	}
 
+	.img-print {
+		border-radius: 5px;
+		height: auto;
+		position: absolute;
+		z-index: 10;
+	}
+	
 	a, a:visited {
 		color: $purple;
-		font-size: 2em;
-		padding: .5em;
+		display: block;
+		font-size: 1.2em;
+		padding: .2em;
 		text-decoration: none;
-		@include transition(all 0.5 ease);
-	}
-	a:hover {
-		background: #fff;
-		border-radius: 5px;
-		cursor: pointer;
-		@include transition(all 0.5 ease);
 	}
 }
 
@@ -360,6 +383,10 @@ $slider-height: 520px;
 		font-size: 10vw;
 		font-weight: 900;
 		text-transform: uppercase;
+	}
+	& > ul {
+		padding: 0;
+		@include gess(100%);
 	}
 }
 

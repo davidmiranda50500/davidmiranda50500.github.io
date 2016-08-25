@@ -1,4 +1,4 @@
-{
+w{
   "name": "davidmiranda50500",
   "authors": [
     "Matheus Graciano (pc-beta) <graciano.dev@gmail.com>"
@@ -21,6 +21,6 @@
     "bourbon": "^4.2.7",
     "slider-pro": "^1.2.2",
     "ResponsiveSlides.js": "viljamis/ResponsiveSlides.js",
-    "codaslider": "jquery-codaslider#*"
+    "jquery-modal": "^0.7.1"
   }
 }

@@ -20,6 +20,15 @@ paths.styles = {
     destTempDir: paths.buildPath+"sass-compiled-temp"
 };
 
+paths.js = {
+    buildPath: './',
+    srcFiles: [
+        './bower_components/ResponsiveSlides.js/responsiveslides.min.js',
+        './bower_components/jquery-modal/jquery-modal.min.js'
+    ],
+    destFile: "dependency-scripts.js",
+};
+
 function isProduction(){ return gutil.env.type === ENV_PRODUCTION; }
 
 gulp.task('sass-compile-and-merge', function(){
@@ -34,22 +43,26 @@ gulp.task('sass-compile-and-merge', function(){
         .pipe(notify({message: 'sass compiled o/'}));
 });
 
-gulp.task('styles', ['clear-css', 'sass-compile-and-merge'], function(){
-    return del([paths.styles.destTempDir]);
+gulp.task('styles', ['sass-compile-and-merge'], function(){
+    return del(['build/css', 'build/sass-compiled']);
 });
 
 gulp.task('watch', function(){
     gulp.watch('sass/**/*.scss', ['styles']);
 });
 
-gulp.task('clear-css', function() {
-    return del(['build/css', 'build/sass-compiled']);
-});
-
 gulp.task('clear', function(){
    gulp.start('clear-sass');
 });
 
+gulp.task('scripts', function(){
+    return gulp.src(paths.js.srcFiles)
+            .pipe(concat(paths.js.destFile))
+            .pipe(gulp.dest(paths.js.buildPath))
+            .pipe(notify({message: 'dependency scripts compiled o/'}));;
+});
+
 gulp.task('default', function() {
     gulp.start('styles');
+    gulp.start('scripts');
 });
