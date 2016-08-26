@@ -67,6 +67,26 @@ $content-max-width: 960px;
 	@include sr-only();
 }
 
+@mixin li-box($color) {
+	& > li {
+		background: $color;
+		border-radius: 5px;
+		border: $color solid 2px;
+		box-sizing: border-box;
+		font-weight: 600;
+		margin-bottom: 2em;
+		@include transition(all 0.3s ease);
+		p {
+			text-align: center;
+		} 
+	}
+	& > li:hover {
+		background: rgba($color, 0.8);
+		cursor: pointer;
+		@include transition(all 0.3s ease);
+	}
+}
+
 img{
 	height: 100%;
 }
@@ -334,23 +354,7 @@ $slider-height: 160px;
 		@include gess(45%, 'medium');
 		@include gess(90%, 'small');
 		justify-content: space-around;
-		& > li {
-			background: $yellow;
-			border-radius: 5px;
-			border: $yellow solid 2px;
-			box-sizing: border-box;
-			font-weight: 600;
-			margin-bottom: 2em;
-			@include transition(all 0.3s ease);
-			p {
-				text-align: center;
-			} 
-		}
-		& > li:hover {
-			background: rgba($yellow, 0.8);
-			cursor: pointer;
-			@include transition(all 0.3s ease);
-		}
+		@include li-box($yellow);
 	}
 
 	.img-print {
@@ -380,14 +384,26 @@ $slider-height: 160px;
 .colabore {
 	align-items: center;
 	min-height: 60vh;
+	flex-wrap: wrap;
 	h2 {
 		font-size: 10vw;
 		font-weight: 900;
 		text-transform: uppercase;
+		width: 100%; // force line break
 	}
 	& > ul {
+		color: $yellow;
 		padding: 0;
 		@include gess(100%);
+		a, a:visited, a:hover{
+			color: inherit;
+			font-size: 1.4em;
+			text-decoration: none;
+		}
+		@include li-box($purple);
+		& > li {
+			padding: .7em;
+		}
 	}
 }
 

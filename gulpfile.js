@@ -44,7 +44,7 @@ gulp.task('sass-compile-and-merge', function(){
 });
 
 gulp.task('styles', ['sass-compile-and-merge'], function(){
-    return del(['build/css', 'build/sass-compiled', paths.styles.destTempDir]);
+    return del(['build/css', 'build/sass-compiled', paths.styles.destTempDir], { force: true });
 });
 
 gulp.task('watch', function(){
