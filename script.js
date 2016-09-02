@@ -20,7 +20,7 @@ $(function(){
 
 	$('.js-slideshow').responsiveSlides({
         auto: false,
-        speed: 500,
+        speed: 1000,
         maxwidth: 960,
         nav: true
 	});
@@ -48,6 +48,17 @@ $(function(){
 
 	$next.text("▶");
 	$prev.text("◀");
+
+	var $proximoApoio = $("#quem-apoia > .next");
+	var $botaoApoio = $("#quem-apoia > .next, #quem-apoia > .prev");
+	var proximoApoioInterval = setInterval(function(){
+			$proximoApoio.click();
+		}, 3000);
+	$botaoApoio.on('click', function(ev){
+		console.log(ev.isTrigger);
+		if(!ev.isTrigger)
+			clearInterval(proximoApoioInterval);
+	});
 
 	if(!isMobile.phone){
 		
