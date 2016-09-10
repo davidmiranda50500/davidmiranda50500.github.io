@@ -52,6 +52,11 @@ $(function(){
 	var $proximoApoio = $("#quem-apoia > .next");
 	var $botaoApoio = $("#quem-apoia > .next, #quem-apoia > .prev");
 	var proximoApoioInterval = setInterval(function(){
+		var elem = document.activeElement;
+		//checar se deu play num vídeo e não tocar mais automaticamente
+	    if(elem && elem.tagName == 'IFRAME')
+	        clearInterval(proximoApoioInterval);
+	    else
 			$proximoApoio.click();
 		}, 3000);
 	$botaoApoio.on('click', function(ev){

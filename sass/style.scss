@@ -321,6 +321,8 @@ $slider-height: 520px;
 
 #video {
 	@include content();
+	@include rslides(60px, $slider-height);
+	
 	background: $purple;
 	iframe {
 		max-width: 100%;
