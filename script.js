@@ -74,6 +74,7 @@ $(function(){
 
 	var $imgPlay = $('.js-img-play');
 	$imgPlay.on('click', function(){
+		clearInterval(proximoVideoInterval);
 		$(this).siblings('.play').fadeOut(200);
 		$(this).fadeOut(200, function(){
 			var src = "https://www.youtube.com/embed/" + $(this).attr('data-video') + "?autoplay=1";
