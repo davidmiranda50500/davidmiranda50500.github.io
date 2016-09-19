@@ -26,7 +26,7 @@ $(function(){
 	});
 
 	$('.js-slide-propostas').responsiveSlides({
-        auto: true,
+        auto: false,
         speed: 1000,
         nav: true
 	});
