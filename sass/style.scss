@@ -327,13 +327,31 @@ $slider-height: 520px;
 
 //video 
 
-#video {
+#videos {
 	@include content();
 	@include rslides(60px, $slider-height);
 	
 	background: $purple;
 	iframe {
 		max-width: 100%;
+	}
+	$yt-size: 530px;
+	.img-play{
+		cursor: pointer;
+		height: $yt-size;
+		object-fit: cover;
+		width: 100%;
+	}
+	.play {
+		$li-size: 150px;
+		color: #ebe55f;
+		cursor: pointer;
+		font-size: $li-size;
+		position: absolute;
+		text-shadow: #652d8c 10px 5px 1px;
+		margin-left: -50%;
+		margin-top: calc((#{$yt-size} / 2) - (#{$li-size} / 2));
+		z-index: 50;
 	}
 }
 

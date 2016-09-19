@@ -52,20 +52,35 @@ $(function(){
 	var $proximoApoio = $("#quem-apoia > .next");
 	var $botaoApoio = $("#quem-apoia > .next, #quem-apoia > .prev");
 	var proximoApoioInterval = setInterval(function(){
-		var elem = document.activeElement;
-		//checar se deu play num vídeo e não tocar mais automaticamente
-	    if(elem && elem.tagName == 'IFRAME')
-	        clearInterval(proximoApoioInterval);
-	    else
-			$proximoApoio.click();
-		}, 3000);
+		$proximoApoio.click();
+	}, 3000);
 	$botaoApoio.on('click', function(ev){
-		console.log(ev.isTrigger);
 		if(!ev.isTrigger)
 			clearInterval(proximoApoioInterval);
 	});
+	$('#quem-apoia li').on('click', function(ev){
+		clearInterval(proximoApoioInterval);
+	})
 
-	if(!isMobile.phone){
-		
-	}
+	var $proximoVideo = $("#videos > .next");
+	var $botaoVideo = $("#videos > .next, #videos > .prev");
+	var proximoVideoInterval = setInterval(function(){
+		$proximoVideo.click();
+	}, 2500);
+	$botaoVideo.on('click', function(ev){
+		if(!ev.isTrigger)
+			clearInterval(proximoVideoInterval);
+	});
+
+	var $imgPlay = $('.js-img-play');
+	$imgPlay.on('click', function(){
+		$(this).siblings('.play').fadeOut(200);
+		$(this).fadeOut(200, function(){
+			var src = "https://www.youtube.com/embed/" + $(this).attr('data-video') + "?autoplay=1";
+			$(this).parent().append('<iframe width="960" height="530" src='+src+' frameborder="0" allowfullscreen></iframe>');
+		});
+	});
+	$("#videos .play").on('click', function(){
+		$(this).siblings(".js-img-play").click();
+	});
 });
