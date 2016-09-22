@@ -299,13 +299,20 @@ $slider-height: 520px;
 		margin: 0;
 		@media #{media_query('big')}, #{media_query('medium')} {
 			align-self: flex-end;
-			font-size: 21px;
+			font-size: 27px;
 			padding-left: 1em;
 		}
+		@media #{media_query('medium')} {
+			font-size: 21px;
+		}
 	}
+	
 	h3 {
 		@media #{media_query('big')}, #{media_query('medium')} {
 			align-self: flex-end;
+			font-size: 23px;
+		}
+		@media #{media_query('medium')} {
 			font-size: 18px;
 		}
 		color: $purple;
