@@ -299,14 +299,14 @@ $slider-height: 520px;
 		margin: 0;
 		@media #{media_query('big')}, #{media_query('medium')} {
 			align-self: flex-end;
-			font-size: 27px;
+			font-size: 21px;
 			padding-left: 1em;
 		}
 	}
 	h3 {
 		@media #{media_query('big')}, #{media_query('medium')} {
 			align-self: flex-end;
-			font-size: 25px;
+			font-size: 18px;
 		}
 		color: $purple;
 		font-weight: normal;
@@ -325,8 +325,7 @@ $slider-height: 520px;
 }
 
 
-//video 
-
+//videos 
 #videos {
 	@include content();
 	@include rslides(60px, $slider-height);
@@ -353,6 +352,10 @@ $slider-height: 520px;
 		margin-top: calc((#{$yt-size} / 2) - (#{$li-size} / 2));
 		z-index: 50;
 	}
+}
+
+.videos{
+	padding: 0!important;
 }
 
 //na imprensa
