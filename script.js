@@ -62,7 +62,7 @@ $(function(){
 	var $botaoApoio = $("#quem-apoia > .next, #quem-apoia > .prev");
 	var proximoApoioInterval = setInterval(function(){
 		$proximoApoio.click();
-	}, 3000);
+	}, 5000);
 	$botaoApoio.on('click', function(ev){
 		if(!ev.isTrigger)
 			clearInterval(proximoApoioInterval);
@@ -75,7 +75,7 @@ $(function(){
 	var $botaoVideo = $("#videos > .next, #videos > .prev");
 	var proximoVideoInterval = setInterval(function(){
 		$proximoVideo.click();
-	}, 2500);
+	}, 3000);
 	$botaoVideo.on('click', function(ev){
 		if(!ev.isTrigger)
 			clearInterval(proximoVideoInterval);
